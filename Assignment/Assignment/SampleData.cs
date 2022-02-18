@@ -1,20 +1,22 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assignment
 {
     public class SampleData : ISampleData
     {
         // 1.
-        public IEnumerable<string> CsvRows => throw new NotImplementedException();
+        public IEnumerable<string> CsvRows => File.ReadLines("People.csv").Skip(1);
 
         // 2.
         public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows() 
-            => throw new NotImplementedException();
+            => CsvRows.Select(row => row.Split(",")[6]).OrderBy(State => State).Distinct();
 
         // 3.
         public string GetAggregateSortedListOfStatesUsingCsvRows()
-            => throw new NotImplementedException();
+            => String.Join(",", GetUniqueSortedListOfStatesGivenCsvRows().ToArray());
 
         // 4.
         public IEnumerable<IPerson> People => throw new NotImplementedException();

@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
+	  <Nullable>enable</Nullable>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+	  <LangVersion>10.0</LangVersion>
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,5 +17,9 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Assignment\Assignment.csproj" />
+	</ItemGroup>
 
 </Project>
